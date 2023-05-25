@@ -4,9 +4,7 @@
           <div class="adult">
               <h2>Персональные данные</h2>
                 <div style="width: 100%; display: flex; flex-direction: column;">
-                  <input type="input" v-model.trim="parent.second_name" placeholder="Фамилия"/>
                   <input type="input" v-model.trim="parent.name" placeholder="Имя"/>
-                  <input type="input" v-model.trim="parent.third_name" placeholder="Отчество"/>
                   <input type="input" v-model.trim="parent.age" placeholder="Возраст"/>
                 </div>
             </div>
@@ -18,7 +16,7 @@
                   
                   <div v-if="is_adding_available">
                     
-                    <input class="addChild-btn btn" v-if="add_child" @click="Another_child()" type="button" value="✚    Добавить ребенка">
+                    <input class="addChild-btn btn" @click="Another_child()" type="button" value="✚    Добавить ребенка">
   
                   </div>
 
@@ -47,6 +45,15 @@
 
           <input class="savedata-btn btn" style="padding: 0.75rem;" @click="SaveData()" type="button" value="Сохранить данные">
 
+          <span @click="zametka = !zametka" style="margin-top: 2rem;  font-family: monospace;   font-size: 15px;">
+            ⓘ Заметка на полях
+              <p v-show="zametka">
+                Отдельно позволю себе заметить, что форма не обременена никаким типом валидации т.к. в задании не указана политика, согласно которой необходимо 
+                обработать данные. А пытаясь ответить на вопросы политики заместо неё, велик шанс допустить логическую ошибку, к примеру: <br> <b>Может ли быть взрослый без ребенка вовсе? 
+                </b><br>
+                Ответ на него зависит от бизнес-процессов, сведений о которых, я увы не имею( 
+              </p>
+          </span>
       </div>  
 
      
@@ -60,15 +67,14 @@ export default {
   data() {
     return {
       parent: {
-        second_name: 'Фамилия',
         name: 'Имя',
-        third_name: 'Отчество',
         age: '20',
         child: []
       },
-      IsChildExist: false,
-      child_limit: false,
-      add_child: true
+      //флаги
+      IsChildExist: false, //регулирует отображение блока детей
+      // далее флаг не влияющий на основные механики приложения
+      zametka: false
     }
   },
     computed: {
@@ -232,4 +238,44 @@ export default {
     color: #fff;
     border: 2px solid #fff;
   }
+  #app > div > span:hover{
+    color: purple;
+    cursor: pointer;
+
+    padding: 0.05rem;
+    margin: 0.25rem;
+
+    outline: 2px solid purple;
+  }
+  @media (max-width: 567px){
+    .child-header{
+      flex-direction: column;
+    }
+  }
 </style>
+
+//old
+<!-- <div class="adult">
+  <h2>Персональные данные</h2>
+    <div style="width: 100%; display: flex; flex-direction: column;">
+      <input type="input" v-model.trim="parent.second_name" placeholder="Фамилия"/>
+      <input type="input" v-model.trim="parent.name" placeholder="Имя"/>
+      <input type="input" v-model.trim="parent.third_name" placeholder="Отчество"/>
+      <input type="input" v-model.trim="parent.age" placeholder="Возраст"/>
+    </div>
+</div> -->
+<!-- data() {
+  return {
+    parent: {
+      second_name: 'Фамилия',
+      name: 'Имя',
+      third_name: 'Отчество',
+      age: '20',
+      child: []
+    },
+    //флаги
+    IsChildExist: false, //регулирует отображение блока детей
+    // далее флаг не влияющий на основные механики приложения
+    zametka: false
+  }
+}, -->

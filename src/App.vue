@@ -12,6 +12,8 @@
 body, html{
   margin: 0;
   padding: 0;
+
+
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -22,6 +24,8 @@ body, html{
 
   width: 100vw;
   height: 100vh;
+
+  min-width: 355px;
 }
 
 nav {
@@ -34,6 +38,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: purple;
 }
 </style>

@@ -37,14 +37,6 @@
                 type: String,
                 default: "NULL"
             },
-            second_name:{
-                type: String,
-                default: "NULL"
-            },
-            third_name:{
-                type: String,
-                default: "NULL"
-            },
             age:{
                 type: String,
                 default: "NULL"
@@ -134,3 +126,26 @@
     }
   </style>
   
+  //old
+  <!-- props: {
+    name:{
+        type: String,
+        default: "NULL"
+    },
+    second_name:{
+        type: String,
+        default: "NULL"
+    },
+    third_name:{
+        type: String,
+        default: "NULL"
+    },
+    age:{
+        type: String,
+        default: "NULL"
+    },
+   child:{
+        type: Array,
+        default: "NULL"
+    },
+}, -->
