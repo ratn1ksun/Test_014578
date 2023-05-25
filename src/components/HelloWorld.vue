@@ -14,11 +14,15 @@
           <div class="child-header">
             <h2>Дети</h2>
 
-                <div v-if="is_adding_available">
+            <transition>
+                  
+                  <div v-if="is_adding_available">
                     
-                  <input class="addChild-btn btn" v-if="add_child" @click="Another_child()" type="button" value="✚    Добавить ребенка">
+                    <input class="addChild-btn btn" v-if="add_child" @click="Another_child()" type="button" value="✚    Добавить ребенка">
+  
+                  </div>
 
-                </div>
+            </transition>
 
           </div>
 
@@ -56,10 +60,10 @@ export default {
   data() {
     return {
       parent: {
-        second_name: '',
-        name: '',
-        third_name: '',
-        age: '',
+        second_name: 'Фамилия',
+        name: 'Имя',
+        third_name: 'Отчество',
+        age: '20',
         child: []
       },
       IsChildExist: false,
@@ -153,7 +157,7 @@ export default {
   }
   .child-header {
     display: flex;
-    justify-content: space-evenly;;
+    justify-content: space-between;;
   } 
   .child-header h2{
     text-align: start;
@@ -210,6 +214,7 @@ export default {
   .savedata-btn{
     transition: all 0.2s linear;
 
+    margin-top: 2rem;
 
     font-weight: bold;
 

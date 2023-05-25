@@ -4,17 +4,19 @@
             
             <div class="adult">
               <h2>Персональные данные</h2>
-              {{ name }}, {{ age }} лет
+              <span>{{ name }}, {{ age }} лет</span>
             </div>
 
             <div class="child">
               <h2>Дети</h2>
 
               <div v-for="(index, key) in child" :key="key">
-                
-                  {{ index.data.child_name }}
-                  {{ index.data.child_age }}
-              
+                <div class="Child_preview">
+                    
+                    {{ index.data.child_name }}
+                    {{ index.data.child_age }}
+
+                </div>       
               </div>
   
             </div>
@@ -66,17 +68,12 @@
     .section{
         margin: auto;
   
-        min-width: 20rem;
-        min-height: 30rem;
-  
         width: auto;
         height: auto;
   
-        background-color: rgba(137, 111, 207, 0.205);
-  
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
   
         padding: 0.75rem;
     }
@@ -97,6 +94,16 @@
   
         /* background-color: #468f3d; */
     }
+    .Child_preview{
+        background-color: #9e9e9e73;
+        border-radius: 5px;
+        padding: 0.5rem;
+
+        margin: 0.75rem;
+
+        font-weight: bold;
+        font-size: 24px;
+    }
     .child div > input[type=input]{
       text-align: center;
     }
@@ -108,7 +115,22 @@
         flex-direction: column;
   
         justify-content: space-between;
-        /* background-color: #a33737; */
+
+        text-align: start;
+    }
+    .adult h2{
+        font-weight: normal;
+    }
+    .adult span{
+        font-weight: bold;
+        font-size: 24px;
+    } 
+    .child h2{
+        font-weight: normal;
+
+        margin-top: 20%;
+
+        text-align: start;
     }
   </style>
   

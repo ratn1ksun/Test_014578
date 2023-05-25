@@ -3,7 +3,7 @@
     <PreviewItem
     :name = this.ShowData.name
     :second_name = this.ShowData.second_name
-    :third = this.ShowData.third_name
+    :third_name = this.ShowData.third_name
     :age = this.ShowData.age
     :child = this.ShowData.child
     ></PreviewItem>
