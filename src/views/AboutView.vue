@@ -14,6 +14,10 @@ export default {
     PreviewItem
   },
   computed: {
+    //в случае, если данных в localsotrage нет, подставляет шаблон 
+    //чтобы не допустить возникновения ошибок. В протвином случае,
+    //отобразит данные по ключу 'CustomerData', не предусматривает 
+    //проверки на "пустоту строк" приходящих из localstorage
     ShowData(){
     
       if(JSON.parse(localStorage.getItem('CustomerData'))){
