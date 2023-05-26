@@ -20,28 +20,27 @@ export default {
     //проверки на "пустоту строк" приходящих из localstorage
     ShowData(){
     
-      if(JSON.parse(localStorage.getItem('CustomerData'))){
+      if(localStorage.getItem('CustomerData') === null){
 
-        return JSON.parse(localStorage.getItem('CustomerData'))
-      
-      }else{
         const parent = {
-        name: 'Тут будет Ваше имя',
-        age: 'и количество',
-        child: []
-      }
-      parent.child.push({
- 
+          name: 'Тут будет Ваше имя',
+          age: 'и количество',
+          child: []
+        }
+        parent.child.push({
            data:{
              child_name: 'Имя Вашего ребенка',
              child_age: 'и его возраст'
            }
-       
       })
-        return parent
-      }
+
+        return parent  
+   
+      }else{
         
-    
+        return JSON.parse(localStorage.getItem('CustomerData'))
+
+      }
     }
   }
 }
