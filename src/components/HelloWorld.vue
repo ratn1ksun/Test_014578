@@ -253,6 +253,9 @@ outline: 2px solid purple;
 .child-header{
   flex-direction: column;
 }
+.section{
+  width: 80%;
+}
 }
 </style>
 
